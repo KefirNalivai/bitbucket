@@ -1,0 +1,12 @@
+AddDefaultCharset utf8
+<FilesMatch ".(json)$">
+
+deny from all
+</FilesMatch>
+RewriteRule ^/.htaccess$ - [G]
+
+SetEnvIfNoCase X-Requested-With XMLHttpRequest ajax
+Order Deny,Allow
+Deny from all
+Allow from env=ajax
+
