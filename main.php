@@ -18,7 +18,7 @@ if (isset($_COOKIE['log']) and isset($_COOKIE['sol'] ) )
 <head>
 </head>
 <body>
-<form id = "registrationForm">
+<form id = "registrationForm" >
 <div>
 <label for="regLog">Login:  </label><br>
 <input id="regLog"><label style="color: red" id = "regLogE"></label><br>
@@ -30,8 +30,18 @@ if (isset($_COOKIE['log']) and isset($_COOKIE['sol'] ) )
 <input id="regMail"><label style="color: red" id = "regMailE"></label><br>
 <label for="regName">Real Name:  </label><br>
 <input id="regName"><label style="color: red" id = "regNameE"></label><br><br>
-<input type="submit" value="Register" onclick="Register(); return false;">
-<input type="submit" value="Go to log" onclick="ChangeForm(); return false;">
+<script type="text/javascript">
+document.write('<input type="submit" id = "regBut" value="Register" onclick="Register(); return false;">');
+</script>
+<noscript>
+ <input type="button" id = "regBut" value="Register" onclick="return false;">
+</noscript>
+<script type="text/javascript">
+document.write('<input type="submit" value="Go to log" onclick="ChangeForm(); return false;">');
+</script>
+<noscript>
+<input type="button" id = "regBut" value="Go to log" onclick="return false;">
+  </noscript>
 </div>
 </form>
 <form id = "loginForm" style="display: none;">
