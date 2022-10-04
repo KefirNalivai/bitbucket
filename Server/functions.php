@@ -36,6 +36,12 @@ if(strlen($regLog) == 0)
 	$regCondition = false;
 }
 
+if ( strpos( $regLog, ' ' ) !== false )
+{
+	$regLogE = "Login not should contain white space's";
+	$regCondition = false;
+}
+
 if($regPass != $regRetryPass)
 {
 	$regPassE = "Retry password does not match the password";
@@ -92,6 +98,8 @@ if(strlen($regMail) == 0)
 	$regMailE = "Please, enter E-mail";
 	$regCondition = false;
 }
+
+
 
    return [ $regCondition, $regLogE, $regPassE, $regRetryPassE, $regMailE, $regNameE];
 };
